@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost/project2');
 app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(expressLayouts); // TODO setup express layouts
+app.use(expressLayouts); // TODO setup express layouts
 app.use(session({
 	secret: process.env.SESSION_SECRET,
 	resave: false,
@@ -27,7 +27,11 @@ app.use(session({
 app.use(flash()); // TODO make flash alerts 
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(function(req, res, next){
+	res.locals.currentUser = req.user;
+	res.locals.alerts = req.flash();
+	next();
+});
 
 // top level routes
 app.get('/', function(req, res){
@@ -35,8 +39,17 @@ app.get('/', function(req, res){
 })
 app.get('/genres', function(req, res){
 	client.genres({
-		ids: arr,
 	    fields: "name"
+}).then(response => {
+	   res.send(response.body);
+	}).catch(error => {
+	    throw error;
+	});
+});
+app.get('/games', function(req, res){
+	client.games({
+		ids: [1, 10, 100, 1000, 10000],
+	    fields: "*"
 }).then(response => {
 	   res.send(response.body);
 	}).catch(error => {
