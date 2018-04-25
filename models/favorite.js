@@ -5,7 +5,6 @@ var favoriteSchema = new mongoose.Schema({
 	name: String,
 	summary: String,
 	platforms: [Number],
-	release_date: String,
 	genres: [Number],
 	cover: {
 		url: String,

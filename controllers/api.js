@@ -58,6 +58,18 @@ module.exports = router;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //  random stuff for testing 
 //              |
 //              |
@@ -66,12 +78,12 @@ module.exports = router;
 //              |
 //              |
 //              V
-//
-let arr = []
-for(i=1; i<35; i++){
-  arr.push(i)
-}
-arr
+
+// let arr = []
+// for(i=1; i<35; i++){
+//   arr.push(i)
+// }
+// arr
 
 
 // displayResults = () => {
@@ -80,10 +92,7 @@ arr
 // 	);
 // }
 
-
-
-// results.forEach(function(game){
-	
+// results.forEach(function(game){	
 // })
 
 // results[0].name
@@ -95,6 +104,7 @@ arr
 
 
 
+// hidden form inputs for submitting to favorite games
 
 
 

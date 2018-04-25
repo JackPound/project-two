@@ -3,11 +3,22 @@
 <% if (results) { %>
 <h1>Results</h1>
 <% results.forEach(function(game){ %>
+<p> ID: <%= game.id %> </p>
 <p> Name: <%= game.name %> </p>
 <p> Genres: <%= game.genres %> </p>
 <p> Cover: <%= game.cover %> </p>
 <p> Platforms: <%= game.platforms %> </p>
 <p> Summary: <%= game.summary %> </p>
+<form action="/new_favorite">
+  <input type="hidden" name="cover" value="<%= game.cover %>">
+  <input type="hidden" name="genres" value="<%= game.genres %>">
+  <input type="hidden" name="id" value="<%= game.id %>">
+  <input type="hidden" name="name" value="<%= game.name %>">
+  <input type="hidden" name="platforms" value="<%= game.platforms %>">
+  <input type="hidden" name="summary" value="<%= game.summary %>">
+  <input type="submit" value="Add <%=game.name%> To Favorites">
+
+</form>
 <% }) %>
 
 
