@@ -55,10 +55,7 @@ app.get('/profile', isLoggedIn, function(req, res){
 app.get('/search', function(req, res){
 	res.render('search', {results: null})
 })
-// app.get('/search', function(req, res){
-// 	console.log(req.query);
-// 	res.redirect('/profile')
-// })
+
 
 
 

@@ -1,8 +1,17 @@
 
 
 <% if (results) { %>
-	wow here are your results
+<h1>Results</h1>
+<% results.forEach(function(game){ %>
+<p> Name: <%= game.name %> </p>
+<p> Genres: <%= game.genres %> </p>
+<p> Cover: <%= game.cover %> </p>
+<p> Platforms: <%= game.platforms %> </p>
+<p> Summary: <%= game.summary %> </p>
+<% }) %>
+
+
 <% } else {%>
-	search results will go here
+	Search games you want to view.
 <% } %>
 
