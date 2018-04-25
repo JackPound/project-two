@@ -51,11 +51,14 @@ app.get('/', function(req, res){
 app.get('/profile', isLoggedIn, function(req, res){
 	res.render('profile')
 })
-
+// route to search page
 app.get('/search', function(req, res){
-	console.log(req.query);
-	res.redirect('/profile')
+	res.render('search', {results: null})
 })
+// app.get('/search', function(req, res){
+// 	console.log(req.query);
+// 	res.redirect('/profile')
+// })
 
 
 
