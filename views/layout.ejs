@@ -19,7 +19,9 @@
 
 				<% if(currentUser) { %>
 				<a href="/account/logout" class="btn btn-warning">Log Out</a>
-				<a href="/profile" class="btn btn-danger">Profile</a>
+				<a href="/profile" class="btn btn-danger">Profile</a>					
+				<h1> Currently logged in as <%= currentUser.username %></h1>
+
 				<% } %>
 			</div>
 		</div>

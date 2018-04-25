@@ -9,7 +9,8 @@ const mongoose         = require('mongoose');
 const passport		   = require('./config/passportConfig');
 const session 	       = require('express-session');
 const isLoggedIn       = require('./middleware/isLoggedIn');
-
+const User             = require('./models/user')
+const Favorite         = require('./models/favorite')
 var app = express();
 // npm for accessing igdb api
 var client = igdb(process.env.IGDB_KEY);
@@ -51,26 +52,12 @@ app.get('/profile', isLoggedIn, function(req, res){
 	res.render('profile')
 })
 
+app.get('/search', function(req, res){
+	console.log(req.query);
+	res.redirect('/profile')
+})
 
-app.get('/genres', function(req, res){
-	client.genres({
-	    fields: "name"
-}).then(response => {
-	   res.send(response.body);
-	}).catch(error => {
-	    throw error;
-	});
-});
-app.get('/games', function(req, res){
-	client.games({
-		ids: [1, 10, 100, 1000, 10000],
-	    fields: "*"
-}).then(response => {
-	   res.send(response.body);
-	}).catch(error => {
-	    throw error;
-	});
-});
+
 
 // routes from any controllers
 app.use('/account', require('./controllers/account'));

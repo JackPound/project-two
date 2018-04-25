@@ -1,13 +1,17 @@
-const mongoose  = require('mongoose');
-const bcrypt    = require('bcrypt');
+const mongoose         = require('mongoose');
+const bcrypt           = require('bcrypt');
+const Favorite         = require('./favorite')
 
 var userSchema = new mongoose.Schema({
 	username: {type: String, unique: true, required: true},
 	email: {type: String, unique: true, required: true},
-	password: {type: String, required: true}
+	password: {type: String, required: true},
+	favorites: [Favorite.schema]
 });
+
 // checks whether the password is correct
 userSchema.methods.isAuthenticated = function(password){
+
 // compareSync(typed in password, password in database)
 	var isCorrectPassword = bcrypt.compareSync(password, this.password);
 	return isCorrectPassword ? this : false;
@@ -24,5 +28,5 @@ userSchema.pre('save', function(next){
 	}
 });
 
-// 
+// export model to use elsewhere
 module.exports = mongoose.model('User', userSchema);

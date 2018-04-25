@@ -1,3 +1,11 @@
 <h1>PROFILE PAGE</h1>
 
-<h2>Hello, welcome back, <%= currentUser.name %>!</h2>
+<h2>Hello, welcome back, <%= currentUser.username %>!</h2>
+
+
+<form method="GET" action="/search" id="gameSearch">
+	<input type="text" name="name" placeholder="Search For Game">
+	<input type="submit">
+</form>
+
+<p><%= currentUser.favorites %></p>

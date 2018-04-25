@@ -25,6 +25,10 @@ router.get('/games', function(req, res){
 	});
 });
 
+router.get('/games/:id', function(req, res){
+	console.log(req.body);
+	res.redirect('/profile')
+})
 module.exports = router;
 
 
