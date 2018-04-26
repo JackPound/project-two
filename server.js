@@ -10,7 +10,7 @@ const passport		   = require('./config/passportConfig');
 const session 	       = require('express-session');
 const isLoggedIn       = require('./middleware/isLoggedIn');
 const User             = require('./models/user')
-const Favorite         = require('./models/favorite')
+
 var app = express();
 // npm for accessing igdb api
 var client = igdb(process.env.IGDB_KEY);
@@ -47,21 +47,10 @@ app.use(function(req, res, next){
 app.get('/', function(req, res){
 	res.render('home');
 })
-// profile route accessable if logged in
-app.get('/profile', isLoggedIn, function(req, res){
-	res.render('profile')
-})
-// route to search page
-app.get('/search', function(req, res){
-	res.render('search', {results: null})
-})
-
-
-
-
 // routes from any controllers
 app.use('/account', require('./controllers/account'));
 app.use('/api', require('./controllers/api'));
+app.use('/search', require('./controllers/search'));
 // listen
 app.listen(app.get('port'), () => {
 	console.log(`Listening PORT: ${app.get('port')}`)

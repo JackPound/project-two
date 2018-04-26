@@ -1,6 +1,6 @@
 <h1>Search Page</h1>
 
-<form method="GET" action="/api/games/search" id="gameSearch">
+<form method="GET" action="/search/games" id="gameSearch">
 	<input type="text" name="name" placeholder="Search For Game">
 	<input type="submit">
 </form>
@@ -8,8 +8,6 @@
 
 <div>
 	
-		<% include partials/results %>
+		<% include ../partials/results %>
 	
 </div>
-
-

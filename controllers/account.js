@@ -10,7 +10,7 @@ router.get('/login', function(req, res){
 })
 //handle login request
 router.post('/login', passport.authenticate('local', {
-	successRedirect: '/profile/',
+	successRedirect: '/account/',
 	successFlash: 'You are now logged in',
 	failureRedirect: '/account/login',
 	failureFlash: 'Invalid Credentials'
@@ -29,7 +29,7 @@ router.post('/signup', function(req, res, next){
 		}
 		else if(user){
 			req.flash('error', 'An account is already registered with this email');
-			res.redirect('/account/login');
+			res.redirect('/account/signup');
 		}
 		else {
 			User.create(req.body, function(err, createdUser){
@@ -38,7 +38,7 @@ router.post('/signup', function(req, res, next){
 					return console.log('err', err)
 				}
 				passport.authenticate('local', {
-					successRedirect: '/profile/',
+					successRedirect: '/account/',
 					successFlash: 'Successful account creation'
 				})(req, res, next);
 			})
@@ -52,4 +52,8 @@ router.get('/logout', function(req, res){
 	res.redirect('/')
 })
 
+// account route accessable if logged in
+router.get('/', isLoggedIn, function(req, res){
+	res.render('account')
+})
 module.exports = router;
