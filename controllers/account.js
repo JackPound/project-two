@@ -57,3 +57,9 @@ router.get('/', isLoggedIn, function(req, res){
 	res.render('account')
 })
 module.exports = router;
+
+
+
+
+
+
