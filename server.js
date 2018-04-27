@@ -15,7 +15,7 @@ var app = express();
 // npm for accessing igdb api
 var client = igdb(process.env.IGDB_KEY);
 // connect to database
-mongoose.connect('mongodb://localhost/project2');
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/project2');
 // set and use statements
 // view engine to EJS
 app.set('view engine', 'ejs');
