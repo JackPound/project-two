@@ -1,8 +1,10 @@
 const express        = require('express');
 const router         = express.Router();
+const mongoose       = require('mongoose');
 const igdb           = require('igdb-api-node').default;
 const client         = igdb(process.env.IGDB_KEY);
-
+const User           = require('../models/user');
+mongoose.connect('mongodb://localhost/project2');
 // show search page
 router.get('/', function(req, res){
 	res.render('search', {results: null})
@@ -28,16 +30,30 @@ router.get('/games', function(req, res){
 	});
 });
 
-router.post('/games',function(req, res){
-	console.log(req.body);
-	var newFavorite = req.body;
-	console.log(newFavorite);
+router.post('/games/',function(req, res){
+	User.findOne({_id: req.user._id}, function(err, user){
+		if(err){
+			console.log('error saving fav game', err);
+		}
+		else if(user){
+			user.favorites.push({
+				cover: req.body.cover,
+				genres: req.body.genres.split(',').map(Number),
+				name: req.body.name,
+				platforms: req.body.platforms.split(',').map(Number),
+				summary: req.body.summary
+			});
+			user.save(function(err){
+				if(err) {
+					console.log('still problems', err);
+				}
+			})
+			res.redirect('/search')
+		}
+	})
 })
 
-// app.delete('games/:id', function(req, res){
-// 	var gameId = req.params.id;
-// 	Favorites.findOneAndRemove({_id: gameId}, function (err, deleteFav){
 
-// 	})
-// })
+
 module.exports = router;
+

@@ -7,7 +7,7 @@
 <p> Name: <%= game.name %> </p>
 <p> Platforms: <%= game.platforms %> </p>
 <p> Summary: <%= game.summary %> </p>
-<form action="/search/games" method="POST">
+<form action="/search/games/" method="POST">
   <input type="hidden" name="cover" value="<%= game.cover %>">
   <input type="hidden" name="genres" value="<%= game.genres %>">
   <input type="hidden" name="id" value="<%= game.id %>">

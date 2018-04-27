@@ -1,7 +1,7 @@
 const mongoose         = require('mongoose');
 const bcrypt           = require('bcrypt');
 
-// favoriteSchema to embed in user schema
+// favorite schema to embed in user schema
 var favoriteSchema = new mongoose.Schema({
 	cover: {
 		url: String,
@@ -15,8 +15,7 @@ var favoriteSchema = new mongoose.Schema({
 	platforms: [Number],
 	summary: String
 });
-// end favoriteSchema //
-
+// user schema
 var userSchema = new mongoose.Schema({
 	username: {type: String, required: true},
 	email: {type: String, unique: true, required: true},

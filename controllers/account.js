@@ -3,7 +3,8 @@ const passport       = require('../config/passportConfig');
 const User           = require('../models/user');
 const isLoggedIn       = require('../middleware/isLoggedIn');
 const router = express.Router();
-
+const mongoose       = require('mongoose');
+// mongoose.connect('mongodb://localhost/project2');
 //show login page
 router.get('/login', function(req, res){
 	res.render('account/login');
@@ -56,10 +57,28 @@ router.get('/logout', function(req, res){
 router.get('/', isLoggedIn, function(req, res){
 	res.render('account')
 })
+// show single game from favorites
+router.get('/:id', function(req, res){
+	// console.log(req.user._id);//working
+	User.findOne({id: req.user._id}, function(err, user){
+		if(err){
+			console.log('error retrieving fav game', err);
+		}
+		else {
+			console.log('we in it')
+			console.log(req.params.id)
+			console.log(req.user.favorites)
+		};
+	})
+	res.send('hello')
+})
+// delete a favorite game from profile page
+// router.delete('/:id', function(req, res){
+// 	// var gameId = req.body.id;
+// 	console.log('hit route')
+// 	// User.findById({_id: gameId}, function (err, deleteFav){
+// 	res.render('account')
+// 	// })
+// })
 module.exports = router;
-
-
-
-
-
 

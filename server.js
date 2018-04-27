@@ -25,6 +25,8 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.urlencoded({extended: false}));
 // use layouts for express i.e. layout.ejs in views
 app.use(expressLayouts);
+// server static files from public directory
+app.use(express.static('public'));
 // ?????
 app.use(session({
 	secret: process.env.SESSION_SECRET,
