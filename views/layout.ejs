@@ -16,15 +16,12 @@
 				<a href="/account/login" class="btn btn-info">Login</a>
 				<a href="/account/signup" class="btn btn-info">Sign Up</a>
 				<% } %>
-
 				<% if(currentUser) { %>
 				<a href="/account" class="btn btn-info">Profile</a>
 				<a href="/search" class="btn btn-info">Search Games</a>
 				<a href="/account/logout" class="btn btn-info">Log Out</a>
 				<h1> Currently logged in as <%= currentUser.username %></h1>
-
 				<% } %>
-				
 			</div>
 		</div>
 		<hr>

@@ -22,7 +22,6 @@ var userSchema = new mongoose.Schema({
 	password: {type: String, required: true},
 	favorites: [favoriteSchema]
 });
-
 // checks whether the password is correct
 userSchema.methods.isAuthenticated = function(password){
 
@@ -30,7 +29,6 @@ userSchema.methods.isAuthenticated = function(password){
 	var isCorrectPassword = bcrypt.compareSync(password, this.password);
 	return isCorrectPassword ? this : false;
 }
-
 // hash the password before saving a user to the db
 userSchema.pre('save', function(next){
 	if(!this.isModified('password')) {
@@ -41,9 +39,5 @@ userSchema.pre('save', function(next){
 		next();
 	}
 });
-// end userSchema //
-
-
-
 // export model to use elsewhere
 module.exports = mongoose.model('User', userSchema);

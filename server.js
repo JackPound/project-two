@@ -15,7 +15,7 @@ var app = express();
 // npm for accessing igdb api
 var client = igdb(process.env.IGDB_KEY);
 // connect to database
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/project2');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project2');
 // set and use statements
 // view engine to EJS
 app.set('view engine', 'ejs');
@@ -44,7 +44,6 @@ app.use(function(req, res, next){
 	res.locals.alerts = req.flash();
 	next();
 });
-
 // home page route
 app.get('/', function(req, res){
 	res.render('home');
@@ -54,8 +53,6 @@ app.use('/account', require('./controllers/account'));
 app.use('/api', require('./controllers/api'));
 app.use('/search', require('./controllers/search'));
 // listen
-// app.listen(app.get('port'), () => {
-// 	console.log(`Listening PORT: ${app.get('port')}`)
-// });
-
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000, () => {
+	console.log('|===========listening port 3000===========|')
+})
