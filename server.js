@@ -54,6 +54,8 @@ app.use('/account', require('./controllers/account'));
 app.use('/api', require('./controllers/api'));
 app.use('/search', require('./controllers/search'));
 // listen
-app.listen(app.get('port'), () => {
-	console.log(`Listening PORT: ${app.get('port')}`)
-});
+// app.listen(app.get('port'), () => {
+// 	console.log(`Listening PORT: ${app.get('port')}`)
+// });
+
+app.listen(process.env.PORT || 3000)
