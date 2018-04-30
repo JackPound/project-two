@@ -1,22 +1,22 @@
 <% if (results) { %>
 <h1>Results</h1>
 <% results.forEach(function(game){ %>
-<p> Cover: <%= game.cover %> </p>
-<p> Genres: <%= game.genres %> </p>
-<p> ID: <%= game.id %> </p>
-<p> Name: <%= game.name %> </p>
-<p> Platforms: <%= game.platforms %> </p>
-<p> Summary: <%= game.summary %> </p>
-<form action="/search/games/" method="POST">
-  <input type="hidden" name="cover" value="<%= game.cover %>">
-  <input type="hidden" name="genres" value="<%= game.genres %>">
-  <input type="hidden" name="id" value="<%= game.id %>">
-  <input type="hidden" name="name" value="<%= game.name %>">
-  <input type="hidden" name="platforms" value="<%= game.platforms %>">
-  <input type="hidden" name="summary" value="<%= game.summary %>">
-  <input type="submit" value="Add <%=game.name%> To Favorites">
-  <input type="hidden" name="results" value="<%=results%>">
-</form>
+<div class="searchGame">
+	<p> Genres: <%= game.genres %> </p>
+	<p> Name: <%= game.name %> </p>
+	<p> Platforms: <%= game.platforms %> </p>
+	<p> Summary: <%= game.summary %> </p>
+	<form action="/search/games/" method="POST">
+	  <input type="hidden" name="cover" value="<%= game.cover %>">
+	  <input type="hidden" name="genres" value="<%= game.genres %>">
+	  <input type="hidden" name="id" value="<%= game.id %>">
+	  <input type="hidden" name="name" value="<%= game.name %>">
+	  <input type="hidden" name="platforms" value="<%= game.platforms %>">
+	  <input type="hidden" name="summary" value="<%= game.summary %>">
+	  <input type="submit" value="Add <%=game.name%> To Favorites">
+	  <input type="hidden" name="results" value="<%=results%>">
+	</form>
+</div>
 <% }) %>
 <% } else {%>
 	Search games you want to view.

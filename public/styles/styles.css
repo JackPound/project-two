@@ -6,3 +6,33 @@ h1 {
 	float: right;
 	color: darkblue;
 }
+
+.searchGame {
+	border: 2px dotted black;
+	padding: 0px 10px;
+	background: lightblue;
+	margin-bottom: 4px;
+}
+
+.profileGame {
+	border: 2px dotted black;
+	padding: 0px 10px;
+	background: lightblue;
+	margin-bottom: 4px;
+}
+
+.profileParagraph {
+
+}
+
+.summary {
+	text-decoration: underline;
+}
+
+.gameTitle {
+	font-size: 24px;
+}
+
+.deleteButton {
+	color: #E85056;
+}

@@ -1,13 +1,32 @@
 <h1><%= currentUser.username %>'s profile page</h1>
 
 <% currentUser.favorites.forEach(function(game){ %>
-<p> Cover: <%= game.cover %> </p>
-<p> Genres: <%= game.genres %> </p>
-<p> Name: <%= game.name %> </p>
-<p> Platforms: <%= game.platforms %> </p>
-<p> Summary: <%= game.summary %> </p>
-<form method="DELETE" action="/account/<%=game._id%>">
-  <input type="hidden" name=":id" value="<%= game._id %>">
-  <input type="submit" value="Remove <%=game.name%> From Favorites">
-</form>
+<div class='profileGame'>
+	<div class='row'>
+		<div class='col-6'>
+			<p class='profileParagraph'> <span class='gameTitle'><%= game.name %></span></p>
+		</div>
+		<div class='col-3'>
+			<p class='profileParagraph'> Genres: <%= game.genres %> </p>
+		</div>
+		<div class='col-3'>
+			<p class='profileParagraph'> Platforms: <%= game.platforms %> </p>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col'>
+			<p style="margin-bottom:0;"><span class="summary">Short Summary:</span></p>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col'>
+			<p> <%= game.summary %> </p>
+		</div>
+	</div>
+	<form method="DELETE" action="/account/<%=game._id%>">
+	  <input type="hidden" name=":id" value="<%= game._id %>">
+	  <input class="deleteButton" type="submit" value="Remove <%=game.name%> from favorites">
+	</form>
+	<hr>
+</div>
 <% }) %>

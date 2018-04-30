@@ -12,7 +12,7 @@ router.get('/', function(req, res){
 //using for search from form on search page
 router.get('/games', function(req, res){
 	client.games({
-		limit: 2,
+		limit: 4,
 		search: req.query.name
 	}, [
 	'cover',
