@@ -41,3 +41,8 @@ h1 {
 .subhead {
 	text-align: center;
 }
+
+.ownedGame {
+	font-size: 20px;
+	color: darkgreen;
+}

@@ -48,7 +48,7 @@ router.post('/games/',function(req, res){
 					console.log('still problems', err);
 				}
 			})
-			res.render('search', {results: null})
+			res.redirect('back')
 		}
 	})
 })

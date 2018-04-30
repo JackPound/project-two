@@ -24,14 +24,24 @@
 		</div>
 	</div>
 	<form action="/search/games/" method="POST">
-	  <input type="hidden" name="cover" value="<%= game.cover %>">
-	  <input type="hidden" name="genres" value="<%= game.genres %>">
-	  <input type="hidden" name="id" value="<%= game.id %>">
-	  <input type="hidden" name="name" value="<%= game.name %>">
-	  <input type="hidden" name="platforms" value="<%= game.platforms %>">
-	  <input type="hidden" name="summary" value="<%= game.summary %>">
-	  <input type="submit" value="Add <%=game.name%> To Favorites">
-	  <input type="hidden" name="results" value="<%=results%>">
+		<input type="hidden" name="cover" value="<%= game.cover %>">
+		<input type="hidden" name="genres" value="<%= game.genres %>">
+		<input type="hidden" name="id" value="<%= game.id %>">
+		<input type="hidden" name="name" value="<%= game.name %>">
+		<input type="hidden" name="platforms" value="<%= game.platforms %>">
+		<input type="hidden" name="summary" value="<%= game.summary %>">
+		<input type="hidden" name="results" value="<%=results%>">
+		<% var youOwn; %>
+		<% currentUser.favorites.forEach(function(fav) {
+			if (fav.name == game.name) {
+				youOwn = true
+			}
+		})
+		if (!youOwn) { %>
+		<input type="submit" value="Add <%=game.name%> To Favorites">
+		<% } else { %>
+		<span class='ownedGame'><%= game.name %> is already in your <a href="/account">favorites</a></span>
+		<% } %>
 	</form>
 	<hr>
 </div>
