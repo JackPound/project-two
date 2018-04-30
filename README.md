@@ -3,17 +3,17 @@ https://favgameproject.herokuapp.com/
 
 Sign up and search for your favorite games then add them to your profile. 
 
-# Models:
+# Models
 User - username, email, password, favorites
 Favorite - cover, genres, id, name, platforms, summary
 
-# Current usability:
+# Current usability
 A user can sign up or log in to use the search functionality and view their profile. 
 Games can be searched for by keywords in game name, summary. 
 Favorite games can be added to your profile and viewed from your profile page. 
 Games on your profile page can be removed from your favorites. 
 
-# Planned features:
+# Planned features
 In rough order of importance~
 Display more detailed information on games searched, genres and platforms named instead of number. 
 Cover art displayed.
@@ -26,7 +26,7 @@ Add about or other refrences to my work.
 Make meaningful home page with popular games as rated on IGDB.
 Integrate with steam database to track sales on popular games.
 
-# Tech Used:
+# Tech Used
 Node.js
 Express.js
 Passport
@@ -35,6 +35,6 @@ Mongoose
 Heroku
 Bootstrap
 
-# Using Data from: 
+# Using Data from
 https://igdb.github.io/api/ with the IGDB node module
 
