@@ -15,7 +15,6 @@ Sign up and search for your favorite games then add them to your profile.
 
 # Planned features
 * In rough order of importance~
-* Display more detailed information on games searched, genres and platforms named instead of number. 
 * Cover art displayed.
 * Comment/review section on each favorite game of profile for user to write about why it is their favorite.
 * Update search function to have optional paramaters for genres and platforms. 

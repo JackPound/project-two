@@ -1,0 +1,374 @@
+<% function genreCheck(item) {
+  let newGenre = []
+    if(item){
+      for (i=0; i<item.length; i++) {
+          if (item[i] == 2) {
+            newGenre.push(' Point-n-Click');
+          } else if (item[i] == 4) {
+            newGenre.push(' Fighting');
+          } else if (item[i] == 5) {
+            newGenre.push(' Shooter');
+          } else if (item[i] == 7) {
+            newGenre.push(' Music');
+          } else if (item[i] == 8) {
+            newGenre.push(' Platform');
+          } else if (item[i] == 9) {
+            newGenre.push(' Puzzle');
+          } else if (item[i] == 10) {
+            newGenre.push(' Racing');
+          } else if (item[i] == 11) {
+            newGenre.push(' Real Time Strategy (RTS)');
+          } else if (item[i] == 12) {
+            newGenre.push(' Role-playing (RPG)');
+          } else if (item[i] == 13) {
+            newGenre.push(' Simulator');
+          } else if (item[i] == 14) {
+            newGenre.push(' Sports');
+          } else if (item[i] == 15) {
+            newGenre.push(' Strategy');
+          } else if (item[i] == 16) {
+            newGenre.push(' Turn-based strategy (TBS)');
+          } else if (item[i] == 24) {
+            newGenre.push(' Tactical');
+          } else if (item[i] == 25) {
+            newGenre.push(' Hack and slash/Beat em up');
+          } else if (item[i] == 26) {
+            newGenre.push(' Quiz/Trivia');
+          } else if (item[i] == 30) {
+            newGenre.push(' Pinball');
+          } else if (item[i] == 31) {
+            newGenre.push(' Adventure');
+          } else if (item[i] == 32) {
+            newGenre.push(' Indie');
+          } else if (item[i] == 33) {
+            newGenre.push(' Arcade');
+          } else {
+            newGenre.push(' Unknown genre');
+          }
+      }
+    } else {
+    newGenre.push('No Genres Listed');
+}
+  return newGenre.toString()
+} %>
+
+<!-- i used another function to write these, not written by hand, no worries... -->
+<% function platformCheck(item) {
+  let newPlatform = []
+  if(item){
+    for(i=0; i<item.length; i++) {
+      if (item[i] ==  3 ) {
+      newPlatform.push(' Linux');
+      } else if (item[i] ==  4 ) {
+      newPlatform.push(' Nintendo 64');
+      } else if (item[i] ==  5 ) {
+      newPlatform.push(' Wii');
+      } else if (item[i] ==  6 ) {
+      newPlatform.push(' PC (Microsoft Windows)');
+      } else if (item[i] ==  7 ) {
+      newPlatform.push(' PlayStation');
+      } else if (item[i] ==  8 ) {
+      newPlatform.push(' PlayStation 2');
+      } else if (item[i] ==  9 ) {
+      newPlatform.push(' PlayStation 3');
+      } else if (item[i] ==  11 ) {
+      newPlatform.push(' Xbox');
+      } else if (item[i] ==  12 ) {
+      newPlatform.push(' Xbox 360');
+      } else if (item[i] ==  13 ) {
+      newPlatform.push(' PC DOS');
+      } else if (item[i] ==  14 ) {
+      newPlatform.push(' Mac');
+      } else if (item[i] ==  15 ) {
+      newPlatform.push(' Commodore C64/128');
+      } else if (item[i] ==  16 ) {
+      newPlatform.push(' Amiga');
+      } else if (item[i] ==  18 ) {
+      newPlatform.push(' Nintendo Entertainment System (NES)');
+      } else if (item[i] ==  19 ) {
+      newPlatform.push(' Super Nintendo Entertainment System (SNES)');
+      } else if (item[i] ==  20 ) {
+      newPlatform.push(' Nintendo DS');
+      } else if (item[i] ==  21 ) {
+      newPlatform.push(' Nintendo GameCube');
+      } else if (item[i] ==  22 ) {
+      newPlatform.push(' Game Boy Color');
+      } else if (item[i] ==  23 ) {
+      newPlatform.push(' Dreamcast');
+      } else if (item[i] ==  24 ) {
+      newPlatform.push(' Game Boy Advance');
+      } else if (item[i] ==  25 ) {
+      newPlatform.push(' Amstrad CPC');
+      } else if (item[i] ==  26 ) {
+      newPlatform.push(' ZX Spectrum');
+      } else if (item[i] ==  27 ) {
+      newPlatform.push(' MSX');
+      } else if (item[i] ==  29 ) {
+      newPlatform.push(' Sega Mega Drive/Genesis');
+      } else if (item[i] ==  30 ) {
+      newPlatform.push(' Sega 32X');
+      } else if (item[i] ==  32 ) {
+      newPlatform.push(' Sega Saturn');
+      } else if (item[i] ==  33 ) {
+      newPlatform.push(' Game Boy');
+      } else if (item[i] ==  34 ) {
+      newPlatform.push(' Android');
+      } else if (item[i] ==  35 ) {
+      newPlatform.push(' Sega Game Gear');
+      } else if (item[i] ==  36 ) {
+      newPlatform.push(' Xbox Live Arcade');
+      } else if (item[i] ==  37 ) {
+      newPlatform.push(' Nintendo 3DS');
+      } else if (item[i] ==  38 ) {
+      newPlatform.push(' PlayStation Portable');
+      } else if (item[i] ==  39 ) {
+      newPlatform.push(' iOS');
+      } else if (item[i] ==  41 ) {
+      newPlatform.push(' Wii U');
+      } else if (item[i] ==  42 ) {
+      newPlatform.push(' N-Gage');
+      } else if (item[i] ==  44 ) {
+      newPlatform.push(' Tapwave Zodiac');
+      } else if (item[i] ==  45 ) {
+      newPlatform.push(' PlayStation Network');
+      } else if (item[i] ==  46 ) {
+      newPlatform.push(' PlayStation Vita');
+      } else if (item[i] ==  47 ) {
+      newPlatform.push(' Virtual Console (Nintendo)');
+      } else if (item[i] ==  48 ) {
+      newPlatform.push(' PlayStation 4');
+      } else if (item[i] ==  49 ) {
+      newPlatform.push(' Xbox One');
+      } else if (item[i] ==  50 ) {
+      newPlatform.push(' 3DO Interactive Multiplayer');
+      } else if (item[i] ==  51 ) {
+      newPlatform.push(' Family Computer Disk System');
+      } else if (item[i] ==  52 ) {
+      newPlatform.push(' Arcade');
+      } else if (item[i] ==  53 ) {
+      newPlatform.push(' MSX2');
+      } else if (item[i] ==  55 ) {
+      newPlatform.push(' Mobile');
+      } else if (item[i] ==  56 ) {
+      newPlatform.push(' WiiWare');
+      } else if (item[i] ==  57 ) {
+      newPlatform.push(' WonderSwan');
+      } else if (item[i] ==  58 ) {
+      newPlatform.push(' Super Famicom');
+      } else if (item[i] ==  59 ) {
+      newPlatform.push(' Atari 2600');
+      } else if (item[i] ==  60 ) {
+      newPlatform.push(' Atari 7800');
+      } else if (item[i] ==  61 ) {
+      newPlatform.push(' Atari Lynx');
+      } else if (item[i] ==  62 ) {
+      newPlatform.push(' Atari Jaguar');
+      } else if (item[i] ==  63 ) {
+      newPlatform.push(' Atari ST/STE');
+      } else if (item[i] ==  64 ) {
+      newPlatform.push(' Sega Master System');
+      } else if (item[i] ==  65 ) {
+      newPlatform.push(' Atari 8-bit');
+      } else if (item[i] ==  66 ) {
+      newPlatform.push(' Atari 5200');
+      } else if (item[i] ==  67 ) {
+      newPlatform.push(' Intellivision');
+      } else if (item[i] ==  68 ) {
+      newPlatform.push(' ColecoVision');
+      } else if (item[i] ==  69 ) {
+      newPlatform.push(' BBC Microcomputer System');
+      } else if (item[i] ==  70 ) {
+      newPlatform.push(' Vectrex');
+      } else if (item[i] ==  71 ) {
+      newPlatform.push(' Commodore VIC-20');
+      } else if (item[i] ==  72 ) {
+      newPlatform.push(' Ouya');
+      } else if (item[i] ==  73 ) {
+      newPlatform.push(' BlackBerry OS');
+      } else if (item[i] ==  74 ) {
+      newPlatform.push(' Windows Phone');
+      } else if (item[i] ==  75 ) {
+      newPlatform.push(' Apple II');
+      } else if (item[i] ==  77 ) {
+      newPlatform.push(' Sharp X1');
+      } else if (item[i] ==  78 ) {
+      newPlatform.push(' Sega CD');
+      } else if (item[i] ==  79 ) {
+      newPlatform.push(' Neo Geo MVS');
+      } else if (item[i] ==  80 ) {
+      newPlatform.push(' Neo Geo AES');
+      } else if (item[i] ==  82 ) {
+      newPlatform.push(' Web browser');
+      } else if (item[i] ==  84 ) {
+      newPlatform.push(' SG-1000');
+      } else if (item[i] ==  85 ) {
+      newPlatform.push(' Donner Model 30');
+      } else if (item[i] ==  86 ) {
+      newPlatform.push(' TurboGrafx-16/PC Engine');
+      } else if (item[i] ==  87 ) {
+      newPlatform.push(' Virtual Boy');
+      } else if (item[i] ==  88 ) {
+      newPlatform.push(' Odyssey');
+      } else if (item[i] ==  89 ) {
+      newPlatform.push(' Microvision');
+      } else if (item[i] ==  90 ) {
+      newPlatform.push(' Commodore PET');
+      } else if (item[i] ==  91 ) {
+      newPlatform.push(' Bally Astrocade');
+      } else if (item[i] ==  92 ) {
+      newPlatform.push(' SteamOS');
+      } else if (item[i] ==  93 ) {
+      newPlatform.push(' Commodore 16');
+      } else if (item[i] ==  94 ) {
+      newPlatform.push(' Commodore Plus/4');
+      } else if (item[i] ==  95 ) {
+      newPlatform.push(' PDP-1');
+      } else if (item[i] ==  96 ) {
+      newPlatform.push(' PDP-10');
+      } else if (item[i] ==  97 ) {
+      newPlatform.push(' PDP-8');
+      } else if (item[i] ==  98 ) {
+      newPlatform.push(' DEC GT40');
+      } else if (item[i] ==  99 ) {
+      newPlatform.push(' Family Computer (FAMICOM)');
+      } else if (item[i] ==  100 ) {
+      newPlatform.push(' Analogue electronics');
+      } else if (item[i] ==  101 ) {
+      newPlatform.push(' Ferranti Nimrod Computer');
+      } else if (item[i] ==  102 ) {
+      newPlatform.push(' EDSAC');
+      } else if (item[i] ==  103 ) {
+      newPlatform.push(' PDP-7');
+      } else if (item[i] ==  104 ) {
+      newPlatform.push(' HP 2100');
+      } else if (item[i] ==  105 ) {
+      newPlatform.push(' HP 3000');
+      } else if (item[i] ==  106 ) {
+      newPlatform.push(' SDS Sigma 7');
+      } else if (item[i] ==  107 ) {
+      newPlatform.push(' Call-A-Computer time-shared mainframe computer system');
+      } else if (item[i] ==  108 ) {
+      newPlatform.push(' PDP-11');
+      } else if (item[i] ==  109 ) {
+      newPlatform.push(' CDC Cyber 70');
+      } else if (item[i] ==  110 ) {
+      newPlatform.push(' PLATO');
+      } else if (item[i] ==  111 ) {
+      newPlatform.push(' Imlac PDS-1');
+      } else if (item[i] ==  112 ) {
+      newPlatform.push(' Microcomputer');
+      } else if (item[i] ==  113 ) {
+      newPlatform.push(' OnLive Game System');
+      } else if (item[i] ==  114 ) {
+      newPlatform.push(' Amiga CD32');
+      } else if (item[i] ==  115 ) {
+      newPlatform.push(' Apple IIGS');
+      } else if (item[i] ==  116 ) {
+      newPlatform.push(' Acorn Archimedes');
+      } else if (item[i] ==  117 ) {
+      newPlatform.push(' Philips CD-i');
+      } else if (item[i] ==  118 ) {
+      newPlatform.push(' FM Towns');
+      } else if (item[i] ==  119 ) {
+      newPlatform.push(' Neo Geo Pocket');
+      } else if (item[i] ==  120 ) {
+      newPlatform.push(' Neo Geo Pocket Color');
+      } else if (item[i] ==  121 ) {
+      newPlatform.push(' Sharp X68000');
+      } else if (item[i] ==  122 ) {
+      newPlatform.push(' Nuon');
+      } else if (item[i] ==  123 ) {
+      newPlatform.push(' WonderSwan Color');
+      } else if (item[i] ==  124 ) {
+      newPlatform.push(' SwanCrystal');
+      } else if (item[i] ==  125 ) {
+      newPlatform.push(' PC-8801');
+      } else if (item[i] ==  126 ) {
+      newPlatform.push(' TRS-80');
+      } else if (item[i] ==  127 ) {
+      newPlatform.push(' Fairchild Channel F');
+      } else if (item[i] ==  128 ) {
+      newPlatform.push(' PC Engine SuperGrafx');
+      } else if (item[i] ==  129 ) {
+      newPlatform.push(' Texas Instruments TI-99');
+      } else if (item[i] ==  130 ) {
+      newPlatform.push(' Nintendo Switch');
+      } else if (item[i] ==  131 ) {
+      newPlatform.push(' Nintendo PlayStation');
+      } else if (item[i] ==  132 ) {
+      newPlatform.push(' Amazon Fire TV');
+      } else if (item[i] ==  133 ) {
+      newPlatform.push(' Philips Videopac G7000');
+      } else if (item[i] ==  134 ) {
+      newPlatform.push(' Acorn Electron');
+      } else if (item[i] ==  135 ) {
+      newPlatform.push(' Hyper Neo Geo 64');
+      } else if (item[i] ==  136 ) {
+      newPlatform.push(' Neo Geo CD');
+      } else if (item[i] ==  137 ) {
+      newPlatform.push(' New Nintendo 3DS');
+      } else if (item[i] ==  138 ) {
+      newPlatform.push(' VC 4000');
+      } else if (item[i] ==  139 ) {
+      newPlatform.push(' 1292 Advanced Programmable Video System');
+      } else if (item[i] ==  140 ) {
+      newPlatform.push(' AY-3-8500');
+      } else if (item[i] ==  141 ) {
+      newPlatform.push(' AY-3-8610');
+      } else if (item[i] ==  142 ) {
+      newPlatform.push(' PC-50X Family');
+      } else if (item[i] ==  143 ) {
+      newPlatform.push(' AY-3-8760');
+      } else if (item[i] ==  144 ) {
+      newPlatform.push(' AY-3-8710');
+      } else if (item[i] ==  145 ) {
+      newPlatform.push(' AY-3-8603');
+      } else if (item[i] ==  146 ) {
+      newPlatform.push(' AY-3-8605');
+      } else if (item[i] ==  147 ) {
+      newPlatform.push(' AY-3-8606');
+      } else if (item[i] ==  148 ) {
+      newPlatform.push(' AY-3-8607');
+      } else if (item[i] ==  149 ) {
+      newPlatform.push(' PC-98');
+      } else if (item[i] ==  150 ) {
+      newPlatform.push(' Turbografx-16/PC Engine CD');
+      } else if (item[i] ==  151 ) {
+      newPlatform.push(' TRS-80 Color Computer');
+      } else if (item[i] ==  152 ) {
+      newPlatform.push(' FM-7');
+      } else if (item[i] ==  153 ) {
+      newPlatform.push(' Dragon 32/64');
+      } else if (item[i] ==  154 ) {
+      newPlatform.push(' Amstrad PCW');
+      } else if (item[i] ==  155 ) {
+      newPlatform.push(' Tatung Einstein');
+      } else if (item[i] ==  156 ) {
+      newPlatform.push(' Thomson MO5');
+      } else if (item[i] ==  157 ) {
+      newPlatform.push(' NEC PC-6000 Series');
+      } else if (item[i] ==  158 ) {
+      newPlatform.push(' Commodore CDTV');
+      } else if (item[i] ==  159 ) {
+      newPlatform.push(' Nintendo DSi');
+      } else if (item[i] ==  160 ) {
+      newPlatform.push(' Nintendo eShop');
+      } else if (item[i] ==  161 ) {
+      newPlatform.push(' Windows Mixed Reality');
+      } else if (item[i] ==  162 ) {
+      newPlatform.push(' Oculus VR');
+      } else if (item[i] ==  163 ) {
+      newPlatform.push(' SteamVR');
+      } else if (item[i] ==  164 ) {
+      newPlatform.push(' Daydream');
+      } else if (item[i] ==  165 ) {
+      newPlatform.push(' PlayStation VR');
+      } else {
+            newPlatform.push(' Unknown Platform');
+          }
+      }
+  } else {
+    newPlatform.push('No Platforms Listed');
+  }
+  return newPlatform.toString()
+} %>
