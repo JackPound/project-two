@@ -59,7 +59,6 @@ router.get('/', isLoggedIn, function(req, res){
 })
 // show single game from favorites
 router.get('/:id', function(req, res){
-	// console.log(req.user._id);//working
 	User.findOne({id: req.user._id}, function(err, user){
 		if(err){
 			console.log('error retrieving fav game', err);
@@ -67,10 +66,8 @@ router.get('/:id', function(req, res){
 		else {
 			req.user.favorites.id(req.params.id).remove();
 			req.user.save(function (err) {
-				console.log('removed favorite ID:', req.params.id)
+				
 			})
-			console.log(req.params.id)
-			console.log(req.user.favorites)
 		};
 	})
 	res.redirect('/account')

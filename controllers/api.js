@@ -35,6 +35,6 @@ module.exports = router;
 
 // for getting all genres for reference later
 var arr = [];
-for(i=0;i<40;i++) {
+for(i=0;i<200;i++) {
 	arr.push(i)
 }
