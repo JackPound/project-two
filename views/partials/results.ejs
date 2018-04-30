@@ -1,11 +1,28 @@
 <% if (results) { %>
-<h1>Results</h1>
+
 <% results.forEach(function(game){ %>
 <div class="searchGame">
-	<p> Genres: <%= game.genres %> </p>
-	<p> Name: <%= game.name %> </p>
-	<p> Platforms: <%= game.platforms %> </p>
-	<p> Summary: <%= game.summary %> </p>
+	<div class='row'>
+		<div class='col-6'>
+			<p><span class='gameTitle'><%= game.name %></span></p>
+		</div>
+		<div class='col-3'>
+			<p> Genre: <%= game.genres %> </p>
+		</div>
+		<div class='col-3'>
+			<p> Platform: <%= game.platforms %> </p>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col'>
+			<p style="margin-bottom:0;"><span class="summary">Short Summary:</span></p>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col'>
+			<p> <%= game.summary %> </p>
+		</div>
+	</div>
 	<form action="/search/games/" method="POST">
 	  <input type="hidden" name="cover" value="<%= game.cover %>">
 	  <input type="hidden" name="genres" value="<%= game.genres %>">
@@ -16,6 +33,7 @@
 	  <input type="submit" value="Add <%=game.name%> To Favorites">
 	  <input type="hidden" name="results" value="<%=results%>">
 	</form>
+	<hr>
 </div>
 <% }) %>
 <% } else {%>

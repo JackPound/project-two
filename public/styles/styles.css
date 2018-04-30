@@ -1,5 +1,6 @@
 h1 {
 	color: darkblue;
+	text-align: center;
 }
 
 #signedIn {
@@ -19,10 +20,6 @@ h1 {
 	padding: 0px 10px;
 	background: lightblue;
 	margin-bottom: 4px;
-}
-
-.profileParagraph {
-
 }
 
 .summary {

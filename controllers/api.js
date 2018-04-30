@@ -6,8 +6,8 @@ const client         = igdb(process.env.IGDB_KEY);
 
 router.get('/genres', function(req, res){
 	client.genres({
-		ids: [2, 4, 12],
-	    fields: "*"
+		ids: [arr],
+	    fields: "name"
 }).then(response => {
 	   res.send(response.body);
 	}).catch(error => {
@@ -32,3 +32,7 @@ router.get('/games/', function(req, res){
 });
 
 module.exports = router;
+var arr = [];
+for(i=0;i<40;i++) {
+	arr.push(i)
+}
