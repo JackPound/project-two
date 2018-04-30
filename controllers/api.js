@@ -32,6 +32,8 @@ router.get('/games/', function(req, res){
 });
 
 module.exports = router;
+
+// for getting all genres for reference later
 var arr = [];
 for(i=0;i<40;i++) {
 	arr.push(i)
