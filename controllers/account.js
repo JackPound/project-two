@@ -65,19 +65,14 @@ router.get('/:id', function(req, res){
 			console.log('error retrieving fav game', err);
 		}
 		else {
-			console.log('we in it')
+			req.user.favorites.id(req.params.id).remove();
+			req.user.save(function (err) {
+				console.log('removed favorite ID:', req.params.id)
+			})
 			console.log(req.params.id)
 			console.log(req.user.favorites)
 		};
 	})
-	res.send('hello')
+	res.redirect('/account')
 })
-// delete a favorite game from profile page
-// router.delete('/:id', function(req, res){
-// 	// var gameId = req.body.id;
-// 	console.log('hit route')
-// 	// User.findById({_id: gameId}, function (err, deleteFav){
-// 	res.render('account')
-// 	// })
-// })
 module.exports = router;

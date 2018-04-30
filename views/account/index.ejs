@@ -1,6 +1,4 @@
-<h1>PROFILE PAGE</h1>
-
-<h2>Hello, welcome back, <%= currentUser.username %>!</h2>
+<h1><%= currentUser.username %>'s profile page</h1>
 
 <% currentUser.favorites.forEach(function(game){ %>
 <p> Cover: <%= game.cover %> </p>
@@ -8,7 +6,7 @@
 <p> Name: <%= game.name %> </p>
 <p> Platforms: <%= game.platforms %> </p>
 <p> Summary: <%= game.summary %> </p>
-<form method="GET" action="/account/<%=game._id%>">
+<form method="DELETE" action="/account/<%=game._id%>">
   <input type="hidden" name=":id" value="<%= game._id %>">
   <input type="submit" value="Remove <%=game.name%> From Favorites">
 </form>
